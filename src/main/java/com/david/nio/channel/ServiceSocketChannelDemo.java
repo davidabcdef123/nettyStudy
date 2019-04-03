@@ -98,10 +98,11 @@ public class ServiceSocketChannelDemo {
 
                                 /*从底层socket读缓冲区中读入数据*/
                                 socketChannel.read(readBuffer);
+                                //todo
                                 readBuffer.flip();
                                 /*解码显示，客户端发送来的信息*/
                                 CharBuffer charBuffer = utf8.decode(readBuffer);
-                                System.out.println(charBuffer.array());
+                                System.out.println("key.isReadable--->"+charBuffer.array());
 
                                 //todo ???
                                 readBuffer.rewind();

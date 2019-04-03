@@ -107,6 +107,9 @@ public class ClientSocketChannelDemo {
                     }
                     Thread.sleep(100 + rnd.nextInt(1000));
                 }
+                if(Thread.currentThread().isInterrupted()){
+                    System.out.println("线程中断了");
+                }
             } catch (IOException e) {
                 System.out.println(name + " encounter a connect error");
             } catch (InterruptedException e) {
