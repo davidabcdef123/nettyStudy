@@ -42,6 +42,7 @@ public class IMDecoder extends ByteToMessageDecoder {
             in.clear();
         } catch (Exception e) {
             e.printStackTrace();
+			ctx.channel().pipeline().remove(this);
         } finally {
         }
     }
