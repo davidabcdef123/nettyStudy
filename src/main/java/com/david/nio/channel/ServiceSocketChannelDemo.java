@@ -98,7 +98,7 @@ public class ServiceSocketChannelDemo {
 
                                 /*从底层socket读缓冲区中读入数据*/
                                 socketChannel.read(readBuffer);
-                                //todo
+                                //指针反转，锁定已有数据
                                 readBuffer.flip();
                                 /*解码显示，客户端发送来的信息*/
                                 CharBuffer charBuffer = utf8.decode(readBuffer);

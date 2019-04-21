@@ -70,9 +70,11 @@ public class ChatServer {
                             pipeline.addLast(new WebSocktHandler());
                         }
                     });
+            //todo sync ???
             ChannelFuture future = serverBootstrap.bind(this.port).sync();
             LOG.info("服务已启动,监听端口" + this.port);
             future.channel().closeFuture().sync();
+            System.out.println("server 结束");
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

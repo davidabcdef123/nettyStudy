@@ -36,7 +36,7 @@ public class NettyServer {
     private static ServerBootstrap initServerBootstrap() {
         ServerBootstrap serverBootstrap = new ServerBootstrap();
         serverBootstrap.group(bossGroup, workGroup)
-                //todo ?channel和child的区别
+                //channel是用于boss线程和child是用于child线程
                 .channel(NioServerSocketChannel.class)
                 .childHandler(new ChannelInitializer<Channel>() {
                     @Override

@@ -29,7 +29,6 @@ public class IMDecoder extends ByteToMessageDecoder {
             String content = new String(array, in.readerIndex(), length);
             //空消息不解析
             if (!(null == content || "".equals(content.trim()))) {
-                //todo this是什么
                 if (!IMP.isIMP(content)) {
                     ctx.channel().pipeline().remove(this);
                     return;
